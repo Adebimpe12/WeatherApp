@@ -5,7 +5,7 @@ from django.conf import settings
 def hello(request):
     visitor_name = request.GET.get('visitor_name', 'Client')
 
-    client_ip = request.META.get('REMOTE_ADDR')
+    client_ip = request.META.get('HTTP_X_FORWARDED_FOR', request.META.get('REMOTE_ADDR'))
 
     ip_address_url = f"http://api.weatherapi.com/v1/ip.json?key={settings.WEATHER_API_KEY}&q={client_ip}"
 
