@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     'adebimpe12.pythonanywhere.com',
 ]
 
-
+CORS_ALLOW_ALL_ORIGINS = True
 
 WEATHER_API_KEY = 'f7de3b886dc24a65ac0140700240107'
 
